@@ -140,9 +140,13 @@ public class ExcelUtil {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void readExcelToExcel(String sourcePath, String goalPath) throws FileNotFoundException, IOException {
-		try (OutputStream fileOut = new FileOutputStream(goalPath)) {
-			readExcelToWorkbook(sourcePath).write(fileOut);
+	public static void readExcelToExcel(String sourcePath) throws FileNotFoundException, IOException {
+		for(int i = 1; i<=100; ++i) {
+			String index = String.valueOf(i);
+			String goalPath = "d:\\test_"+index+".xlsx";
+			try (OutputStream fileOut = new FileOutputStream(goalPath)) {
+				readExcelToWorkbook(sourcePath).write(fileOut);
+			}
 		}
 	}
 
@@ -213,48 +217,47 @@ public class ExcelUtil {
 			XSSFWorkbook inputwb = new XSSFWorkbook(inputFile);
 			File file = new File(setOfPaths);
 			String fileName = file.getName();
-			for (int index = 0; index < inputwb.getNumberOfSheets(); index++) {
+			for (int index = 0; index < inputwb.getNumberOfSheets(); ++index) {
 				XSSFSheet sheet = inputwb.getSheetAt(index);
 				String sheetName = sheet.getSheetName();
-				for (int ind = 0; ind < sheet.getLastRowNum(); ind++) {
+				for (int ind = 0; ind <= sheet.getLastRowNum(); ++ind) {
 					XSSFRow rows = sheet.getRow(ind);
 					if(rows != null) {
-						for(int indices = 0; indices < rows.getLastCellNum(); indices++) {
+						for(int indices = 0; indices <= rows.getLastCellNum()+1; ++indices) {
 							Cell cell = rows.getCell(indices);
 							String str = "戴纪帆";
-							switch(cell.getCellType()) {
-								case NUMERIC:
-									break;
-								case BLANK:
-									break;
+			                if (cell != null) {
+								switch(cell.getCellType()) {
 								case STRING:
 									if(cell.getStringCellValue().equals(str)) {
 										CellAddress address = cell.getAddress();
 										String celladdress = address.toString();
 										System.out.println("文件名>"+fileName+"Sheet位置>"+sheetName+"单元格地址>"+celladdress);
+										try(FileOutputStream outputstream = new FileOutputStream(txtPath)){
+											inputwb.write(outputstream);
+											}
 									}
 									break;
-							default:
-								break;
-								
+									case NUMERIC:
+										break;
+									case BLANK:
+										break;
+								    default:
+									    break;
 									
-							
-							}
-							
-							
+										
+								
+								}
+			                }
+								
 						}
 					}
-					
-					
+						
 				}
-				
-				
 			}
-		try(FileOutputStream outputstream = new FileOutputStream(txtPath)){
-			inputwb.write(outputstream);
+		
 		}
-			
-		}
+		
 	
 	}
 	
@@ -265,8 +268,14 @@ public class ExcelUtil {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void copyImage(String[] sourcePaths) 
+	public static void copyImage() 
 			throws FileNotFoundException, IOException{	
+		String[] sourcePaths = new String[100];
+		for(int i = 1; i<=100; ++i) {
+			String index = String.valueOf(i);
+			String Paths = "d:\\test_"+index+".xlsx";
+			sourcePaths[i-1] = Paths;
+		}
 		for(String setOfPaths: sourcePaths) {
 			FileInputStream inm = new FileInputStream(setOfPaths);
 			XSSFWorkbook readwb = new XSSFWorkbook(inm);
@@ -278,7 +287,8 @@ public class ExcelUtil {
 				byte[] data = pic.getData();
 				int inn = lst.indexOf(pic);
 				String ind = fileName + String.valueOf(inn);
-				try(FileOutputStream fileOut = new FileOutputStream("c:\\Users\\Administrator\\Desktop\\setsOfPics"+"\\"+ind+".jpg")){
+				try(FileOutputStream fileOut = new FileOutputStream("c:\\Users\\"
+						+ "Administrator\\Desktop\\setsOfPics"+"\\"+ind+".jpg")){
 					fileOut.write(data);
 				}
 			}
