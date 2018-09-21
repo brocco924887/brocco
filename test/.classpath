@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/poi-4.0.0/poi-4.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/poi-4.0.0/poi-examples-4.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/poi-4.0.0/poi-excelant-4.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/poi-4.0.0/poi-ooxml-4.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/poi-4.0.0/poi-ooxml-schemas-4.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/poi-4.0.0/poi-scratchpad-4.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/.m2/repository/junit/junit/4.12/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/.m2/repository/junit/junit/4.12/junit-4.12-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/.m2/repository/mysql/mysql-connector-java/8.0.12/mysql-connector-java-8.0.12.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/.m2/repository/mysql/mysql-connector-java/8.0.12/mysql-connector-java-8.0.12-sources.jar"/>
+	<classpathentry kind="lib" path="D:/xmlbeans-3.0.1/lib/resolver.jar"/>
+	<classpathentry kind="lib" path="D:/xmlbeans-3.0.1/lib/xbean.jar"/>
+	<classpathentry kind="lib" path="D:/xmlbeans-3.0.1/lib/xbean_xpath.jar"/>
+	<classpathentry kind="lib" path="D:/xmlbeans-3.0.1/lib/xmlpublic.jar"/>
+	<classpathentry kind="lib" path="D:/commons-collections4-4.2/commons-collections4-4.2.jar"/>
+	<classpathentry kind="lib" path="D:/commons-collections4-4.2/commons-collections4-4.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/commons-collections4-4.2/commons-collections4-4.2-sources.jar"/>
+	<classpathentry kind="lib" path="D:/commons-collections4-4.2/commons-collections4-4.2-tests.jar"/>
+	<classpathentry kind="lib" path="D:/commons-collections4-4.2/commons-collections4-4.2-test-sources.jar"/>
+	<classpathentry kind="lib" path="D:/commons-compress-1.18/commons-compress-1.18.jar"/>
+	<classpathentry kind="lib" path="D:/commons-compress-1.18/commons-compress-1.18-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/commons-compress-1.18/commons-compress-1.18-sources.jar"/>
+	<classpathentry kind="lib" path="D:/commons-compress-1.18/commons-compress-1.18-tests.jar"/>
+	<classpathentry kind="lib" path="D:/commons-compress-1.18/commons-compress-1.18-test-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
